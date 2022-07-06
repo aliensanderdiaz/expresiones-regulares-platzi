@@ -1,0 +1,242 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-1BmE4kWBq78iYhFldvKuhfTAU6auU8tT94WrHftjDbrCEXSU1oBoqyl2QvZ6jIW3" crossorigin="anonymous">
+    <script src="https://cdn.jsdelivr.net/gh/google/code-prettify@master/loader/run_prettify.js"></script>
+    <title>Curso de Expresiones Regulares</title>
+</head>
+
+<body>
+    <header class="text-center">
+        <h1>Curso de Expresiones Regulares</h1>
+    </header>
+    <main class="container">
+        <hr>
+
+        <section class="row">
+            <article class="col">
+                <h2>Sección 1 de 29 - Todo lo que aprenderás sobre expresiones regulares</h2>
+                <div class="Resources-description">
+                    <p>Este curso te va a enseñar qué son las expresiones regulares y cómo utilizarlas.<br>
+                        Por ejemplo aplicaciones de búsqueda y filtrado, las expresiones regulares son extremadamente
+                        potentes, aprende a utilizarlas en este curso.</p>
+                </div>
+            </article>
+        </section>
+
+        <hr>
+
+        <section class="row">
+            <article class="col">
+                <h2>Sección 2 de 29 - ¿Qué son las expresiones regulares?</h2>
+
+            </article>
+        </section>
+
+        <hr>
+
+        <section class="row">
+            <article class="col">
+                <h2>Sección 3 de 29 - Aplicaciones de las expresiones regulares</h2>
+                <div class="Resources-description">
+                    <p>Buscar e investigar sobre Expresiones Regulares puede ser muy intimidante.<br>
+                        /^(.){5}\w?[a-Z|A-Z|0-9]$/ig<br>
+                        En serio pueden parecer muy, muy raras; pero la verdad es que no lo son.</p>
+                    <p>En esta clase aprenderás, para qué te puede servir el saber usar bien las Expresiones Regulares;
+                        y es, en pocas palabras, para buscar.</p>
+                </div>
+            </article>
+        </section>
+
+        <hr>
+
+        <section class="row">
+            <article class="col">
+                <h2>Sección 4 de 29 - Introducción al lenguaje de expresiones regulares</h2>
+                <div class="Resources-description">
+                    <p>Con las expresiones regulares vamos a solucionar problemas reales, problemas del día a día.</p>
+                    <p>¿Qué pasa si queremos buscar en un texto (txt, csv, log, cualquiera), todos los números de
+                        teléfonos que hay?<br>
+                        Tendríamos que considerar por ejemplo, que un teléfono de México serían 10 dígitos; hay quienes
+                        los separan con guión, hay quienes los separan con puntos, hay quienes no los separan sino que
+                        tienen los 10 dígitos exactos, y este patrón puede cambiar para otros países.</p>
+                    <p>Esto mismo sucede con números de tarjetas de crédito, códigos postales, dirección de correos,
+                        formatos de fechas o montos, etc.</p>
+                </div>
+            </article>
+        </section>
+
+        <hr>
+
+        <section class="row">
+            <article class="col">
+                <h2>Sección 5 de 29 - El caracter (.)</h2>
+                <div class="Resources-description">
+                    <p>¿Qué es un archivo de texto, por ejemplo un CSV?<br>
+                        ¿Qué es una cadena de caracteres?</p>
+                    <p>Cada espacio en una cadena de texto se llena con un caracter, esto lo necesitamos tener
+                        perfectamente claro para comenzar a trabajar con expresiones regulares</p>
+                    <p>Abriremos nuestro editor, qué en este curso recomendamos ATOM, vamos a presionar CTRL + F y
+                        podremos buscar por match idénticos.</p>
+                </div>
+                <pre class="prettyprint">
+
+                  /./ -> Un caracter
+                  /. / -> Un caracter seguido de un espacio
+                  /........../ -> 10 caracteres seguidos
+                </pre>
+            </article>
+        </section>
+
+        <hr>
+
+        <section class="row">
+            <article class="col">
+                <h2>Sección 6 de 29 - Las clases predefinidas y construidas</h2>
+                <div class="Resources-description">
+                    <p>Las búsquedas en las expresiones regulares funcionan en múltiplos de la cantidad de caracteres
+                        que explícitamente indicamos.</p>
+                </div>
+                <pre class="prettyprint">
+                
+                  /\d/ -> Digitos
+                  /\d\d\d/ -> 3 Digitos Seguidos
+                  /\w/ -> word - Palabra (caracteres que conforman una palabra)(letras, digitos y _)
+                  /\w\w\w\w/ -> Palabras con 4 caracteres seguidos
+                  /\s/ -> whiteSpaces - Espacios en blanco
+                </pre>
+
+                <pre class="prettyprint">
+                
+                  /[0-9]/ -> Buscar digitos
+                  /[6-9]/ -> Buscar digitos mayores o iguales a 6 y menores o iguales a 9
+                  /[a-z]/ -> Palabras que contienen de la a hasta la z, en minuscula
+                  /[a-z][A-Z][0-9]_/ - Palabras que contienen letras, digitos y _
+                  /\./ -> Caracter Punto
+                </pre>
+            </article>
+        </section>
+
+        <hr>
+        
+        <section class="row">
+            <article class="col">
+                <h2>Sección 7 de 29 - Los delimitadores: +, *, ?</h2>
+                <pre class="prettyprint">
+                
+                  \w - caracteres de palabras
+                  \d - dígitos
+                  \s - espacios/invisibles en blanco
+                  [0-9] ~ \d
+                  [0-9a-zA-Z_] ~ \w
+
+                  * greedy - todo
+                  + uno o mas
+                </pre>
+
+                <pre class="prettyprint">
+                
+                  /\d*/ -> digitos pero en conjunto, no uno por uno
+                  NOTA: tambien cero o muchos
+
+                  /\d+/ -> digitos pero en conjunto, no uno por uno
+                  NOTA: uno o mas
+
+                  /\d?/ -> digitos pero en conjunto, no uno por uno
+                  NOTA: cero o uno
+                </pre>
+
+                <pre class="prettyprint">
+                
+                    1
+                    12
+                    123
+                    1234
+                    123 45
+                    12345678910
+                    12345678910a
+                    13453243
+                </pre>
+
+                <pre class="prettyprint">
+                
+                  . -> 47 Caracteres
+                  \d -> 45 Digitos
+                  \d* -> 12 coincidencias
+                  \d+ -> 9 coincidencias
+                  \d? -> 48 coincidencias
+
+                </pre>
+
+                <pre class="prettyprint">
+                
+                  \d+[a-z] -> uno o mas digitos, pero que terminen en una letra
+                  \d*[a-z] -> digitos opcional (cero o muchos), pero que terminen en una letra
+                  \d*[a-z][a-z] -> digitos opcional (cero o muchos), pero que terminen en dos letras
+                  \d*[a-z][a-z]? -> digitos opcional (cero o muchos), pero que terminen en una letra y otra letra opcional
+                  \d*[a-z]?s\d* -> digitos opcional (cero o muchos), letra minuscula opcional (cero o una), letra s obligatoria, digitos opcionales (cero, uno o muchos)
+                </pre>
+                
+            </article>
+        </section>
+
+        <hr>
+        
+        <section class="row">
+            <article class="col">
+                <h2>Sección 8 de 29 - Los contadores {1,4}</h2>
+                <div class="Resources-description"><p>Lo que vamos a aprender en esta clase es comenzar a generalizar nuestras búsquedas, a ser específicos cubriendo grandes cantidades de caracteres sin tener que escribir de forma repetitiva como sería poner por ejemplo “\d\d\d\d\d\d\d\d…”</p></div>
+                <pre class="prettyprint">
+                
+                    \d{2,2} -> minimo 2 digitos, maximo 2 digitos
+                    \d{5,10} -> minimo 5, maximo 10
+                    NOTA: siempre agrupa primero por el maximo
+                    \d{5,} -> minimo 5, sin maximo
+                </pre>
+
+                <pre class="prettyprint">
+                
+                    \d{2,2}[\-\.]? -> grupos de 2 digitos, seguidos de un . o un - que puede ser opcional
+                    \d{2,2}[\-\.]?\d{2,2}[\-\.]?\d{2,2}[\-\.]? -> Igual que el anterior pero 3 veces
+                </pre>
+            </article>
+        </section>
+
+        <hr>
+        
+        <section class="row">
+            <article class="col">
+                <h2>Sección 9 de 29 - El caso de (?) como delimitador</h2>
+                <div class="Resources-description"><p>El ? indica al patrón que encuentre las coincidencias de manera rápida (o greedy); es decir, devolviendo el resultado más pequeño que haga match hasta donde se encuentra el delimitador, y esto lo haga tantas veces como sea posible dentro de la cadena.</p></div>
+                <pre class="prettyprint">
+                
+                    csv1,csv2,csv3,csv4,csv5
+
+                    .*, ->
+                </pre>
+            </article>
+        </section>
+
+
+
+
+
+
+
+
+
+
+
+
+
+    </main>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js"
+        integrity="sha384-ka7Sk0Gln4gmtz2MlQnikT1wXgYsOg+OMhuP+IlRH9sENBO0LRn5q+8nbTov4+1p"
+        crossorigin="anonymous"></script>
+</body>
+
+</html>
